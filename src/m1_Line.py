@@ -178,10 +178,14 @@ class Line(object):
     """ Represents a line segment in 2-dimensional space. """
 
     def __init__(self, start, end):
-        import rosegraphics as rg
 
-        start = rg.Point(start.x, start.y)
-        end = rg.Point(end.x, end.y)
+        x = start.clone()
+        y = end.clone()
+        p = start
+        z = end
+        self.start = x
+        self.end = y
+
 
         """ 
         What comes in:
@@ -302,6 +306,11 @@ class Line(object):
         return (self.start == line2.start) and (self.end == line2.end)
 
     def clone(self):
+        x = self.start
+        y = self.end
+        return Line(x, y)
+
+
         """
         What comes in:
           -- self
@@ -331,7 +340,7 @@ class Line(object):
           :rtype: Line
         """
         # --------------------------------------------------------------
-        # TODO: 4.
+        # Done
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -341,25 +350,32 @@ class Line(object):
         # --------------------------------------------------------------
 
     def reverse(self):
+        return Line(self.end, self.start)
+
+
+
+
+
+
         """
         What comes in:
           -- self
         What goes out: Nothing (i.e., None).
         Side effects: MUTATES this Line so that its direction is
         reversed (that is, its start and end points are swapped).
-
+    
         Examples:
             p1 = Point(30, 17)
             p2 = Point(50, 80)
             line1 = Line(p1, p2)
             line2 = line1.clone()
-
+    
             print(line1)  # Should print: Line[(30, 17), (50, 80)]
-
+    
             line1.reverse()
             print(line1)  # Should print: Line[(50, 80), (30, 17)]
             print(line1 == line2)    # Should print: False
-
+    
             line1.reverse()
             print(line1 == line2)    # Should now print: True
         """
@@ -374,6 +390,17 @@ class Line(object):
         # --------------------------------------------------------------
 
     def slope(self):
+        x = self.start
+        y = self.end
+        if (y.x - x.x) == 0:
+            return 'inf'
+        else:
+            return (y.y - x.y)/(y.x-x.x)
+
+
+
+
+
         """
         What comes in:
           -- self
@@ -400,7 +427,7 @@ class Line(object):
           :rtype: float
         """
         # --------------------------------------------------------------
-        # TODO: 6.
+        # Done
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
