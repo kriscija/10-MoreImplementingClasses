@@ -437,28 +437,34 @@ class Line(object):
         # --------------------------------------------------------------
 
     def length(self):
-        """
-        What comes in:
-          -- self
-        What goes out: Returns the length of this Line.
-        Side effects: None.
+        x = self.start
+        y = self.end
+        return ((math.fabs(y.y-x.y))**2+(math.fabs(y.x-x.x))**2)**.5
 
-        Example:
-            p1 = Point(166, 10)
-            p2 = Point(100, 10)
-            line1 = Line(p1, p2)
 
-            # Since the distance from p1 to p2 is 66:
-            print(line1.length())  # Should print: 66.0
 
-            p3 = Point(0, 0)
-            p4 = Point(3, 4)
-            line2 = Line(p3, p4)
-            print(line2.length())  # Should print about 5.0
+    """
+    What comes in:
+      -- self
+    What goes out: Returns the length of this Line.
+    Side effects: None.
 
-        Type hints:
-          :rtype: float
-        """
+    Example:
+        p1 = Point(166, 10)
+        p2 = Point(100, 10)
+        line1 = Line(p1, p2)
+
+        # Since the distance from p1 to p2 is 66:
+        print(line1.length())  # Should print: 66.0
+
+        p3 = Point(0, 0)
+        p4 = Point(3, 4)
+        line2 = Line(p3, p4)
+        print(line2.length())  # Should print about 5.0
+
+    Type hints:
+      :rtype: float
+    """
         # --------------------------------------------------------------
         # TODO: 7.
         #   a. READ the above specification, including the Example.
