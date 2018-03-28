@@ -3,7 +3,7 @@ A   CapitalT   class and methods that use the Cross class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Done
 
 import rosegraphics as rg
 
@@ -103,6 +103,8 @@ class CapitalT(object):
     """ Manages a CapitalT graphics object which is made up of two rectangles. """
 
     def __init__(self, intersection_center, width, height, letter_thickness):
+        c1 = rg.Point(intersection_center.x
+        self.h_rect = rg.Rectangle((intersection_center.x))
         """
         What comes in:
            -- self
