@@ -103,7 +103,7 @@ class CapitalT(object):
     """ Manages a CapitalT graphics object which is made up of two rectangles. """
 
     def __init__(self, intersection_center, width, height, letter_thickness):
-        c1 = rg.Point(intersection_center.x - height/2, intersection_center.y - 
+        c1 = rg.Point(intersection_center.x - height/2, intersection_center.y -
         self.h_rect = rg.Rectangle((intersection_center.x))
         """
         What comes in:
