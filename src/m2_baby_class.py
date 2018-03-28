@@ -89,6 +89,25 @@ def main():
 #          """ Brief description of what objects of the class 'are'. """
 #
 ########################################################################
+class Baby(object):
+    def __init__ (self, name):
+        self.name = name
+        print('Hello baby ', self.name)
+        self.foodlevel = 0
+
+    def feed_baby(self):
+        self.foodlevel = 0
+
+    def hour_passes(self):
+        self.foodlevel = self.foodlevel + 1
+        if self.foodlevel == 1:
+            print('baby', self.name, 'is sleeping')
+        if self.foodlevel ==2:
+            print('baby', self.name, 'is ready for dinner, and youre gonna pay if you dont deliver')
+        if self.foodlevel >= 3:
+            print('baby', self.name, 'is absolutely freaking the fuck out, feed him NOW!')
+
+
 
 
 
